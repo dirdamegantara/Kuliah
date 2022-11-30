@@ -1,0 +1,62 @@
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+
+using namespace std;
+
+int awal, jumlah, nomor;
+char hexcode;
+
+
+void ascii(int awal, int jumlah)
+{
+	for(int nomor = awal; nomor <= awal+jumlah-1; nomor++) 
+	{
+      printf("ASCII [%d] = %c \n", nomor, nomor);
+    }
+}
+
+void hexadecimal()
+{
+	printf("Hexadecimal = %x \n", hexcode);
+}
+
+int main()
+{
+	int pilihan;
+	char ulang;
+
+while(1)
+{
+	
+	cout << "Silahkan Memilih" << endl;
+	cout << "1. Tabel ASCII" << endl;
+	cout << "2. Tabel Hexadecimal" << endl;
+	cin >> pilihan;
+	
+	switch(pilihan)
+	{
+		case 1:
+			cout << "Masukkan angka awal" << endl;
+			cin >> awal;
+			cout << "Masukkan jumlah yang akan ditampilkan" << endl;
+			cin >> jumlah;
+			ascii(awal, jumlah);
+		break;
+		
+		case 2:
+    		cout << "Masukkan karakter" << endl;
+			cin >> hexcode;
+			hexadecimal();
+    	break;
+	}
+	
+	cout << "Ulang? (y/t)" << endl;
+	cin >> ulang;
+	if(ulang == 't')
+	{
+		break;
+	}
+}	
+  return 0;
+}
